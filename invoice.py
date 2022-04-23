@@ -166,7 +166,6 @@ def write_edi_header_TREPCO():
             edi.write('N3*3930 CIVIC CENTER DR*NORTH LAS VEGAS NV 89030 0~\n')
             edi.write('N4*North Las Vegas*Ne*89030-7541*US~\n')
             edi.write('ITD*03*****{date}******30 DAYS~\n'.format(date=date_8))
-
             break
 
 
@@ -243,7 +242,6 @@ def write_edi_header_PTL():
             edi.write('N1*RE*PTL ONE~\n')
             edi.write('N4*Pompano Beach*FL*33069*US~\n')
             edi.write('ITD*03*****{date}******30 DAYS~\n'.format(date=date_8))
-
             break
 
 
