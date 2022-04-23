@@ -334,22 +334,22 @@ logo_label.grid(columnspan=3, row=0,)
 
 # arrow
 img_arrow = Image.open('img/right-arrow.png')
-img_arrow = img_arrow.resize((50, 50), resample=Image.LANCZOS)
+img_arrow = img_arrow.resize((50, 50))
 img_arrow = ImageTk.PhotoImage(img_arrow)
 arrow_label = tk.Label(image=img_arrow, borderwidth=0)
 arrow_label.image = img_arrow
 arrow_label.grid(columnspan=2, row=2)
 
 img_PDF = Image.open('img/folder_pdf.png')
-img_PDF = img_PDF.resize((60, 60), resample=Image.LANCZOS)
+img_PDF = img_PDF.resize((60, 60))
 img_PDF = ImageTk.PhotoImage(img_PDF)
 
 img_EDI = Image.open('img/folder_edi.png')
-img_EDI = img_EDI.resize((60, 60), resample=Image.LANCZOS)
+img_EDI = img_EDI.resize((60, 60))
 img_EDI = ImageTk.PhotoImage(img_EDI)
 
 img_OFF = Image.open('img/power.png')
-img_OFF = img_OFF.resize((30, 30), resample=Image.LANCZOS)
+img_OFF = img_OFF.resize((30, 30))
 img_OFF = ImageTk.PhotoImage(img_OFF)
 
 # instructions
