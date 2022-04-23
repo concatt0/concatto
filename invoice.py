@@ -30,7 +30,6 @@ def open_directory():
     directory = askdirectory(parent=root, title="Choose a directory")
     if directory:
         os.chdir(directory)
-        # print("directory selected ", directory)
 
 
 def translate_edi():
@@ -128,9 +127,7 @@ def write_edi_header_TREPCO():
         line = line.upper()
         line_save = line
         if invoice_re.search(line):
-            print(line.split())
             line = line.split()
-            print('Invoice #{inv}, date {date}'.format(inv=line[-6], date=line[-5]))
             inv_number = line[-6]
             ediline = 'ISA*00*          *00*          *ZZ*LANDRYS_IT     *ZZ*LANDRYS        *{date}*{time}*U*00401*123456789*0*P*>~\n'.format(date=date_6, time=time)
             edi.write(ediline)
@@ -188,7 +185,6 @@ def write_edi_body_TREPCO():
                 line = line.split()
                 if line[2] != '0':  # ignore zero order qty detail line
                     item_count += 1
-                    # print('UPC:' + line[0] + ' QTY:' + line[2] + ' COST: ' + line[-2])
 
                     # build item description
                     item_desc = ''
@@ -217,7 +213,6 @@ def write_edi_header_PTL():
         line = line.upper()
         line_save = line
         if invoice_re.search(line):
-            print(line.split())
             line = line.split()
             inv_number = line[2]
 
@@ -265,16 +260,13 @@ def write_edi_body_PTL():
             line = line.upper()
             if upc_re.search(line):
                 line = line.split()
-                print(line)
                 if line[2] != '0':  # ignore zero order qty detail line
                     item_count += 1
-                    # print('UPC:' + line[0] + ' QTY:' + line[2] + ' COST: ' + line[-2])
 
                     # build item description
                     item_desc = ''
                     for i in range(1, len(line) - 4):
                         item_desc += line[i] + ' '
-                    print("item_desc:", item_desc)
 
                     # build IT1 segment
                     qty = line[-3] + '.00'  # qty is a floating-point number
