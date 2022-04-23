@@ -1,3 +1,7 @@
+# Invoice PDF to EDI-810 Translator
+# Author: Phillip Huynh
+# Date: April 2022
+
 from typing import Any
 import tkinter as tk
 import tkinter.scrolledtext as st
